@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import User from './Pages/User';
+import Moviee from './Pages/Moviee';
+import { Layout } from './Pages/Layout';
+import  '../src/css/Layout.css'; 
+import { Login } from './Pages/Login';
+import { Profile } from './Pages/Profile';
+import SingleMovie from './Pages/SingleMovie';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+     <Layout/>
+      <Routes>
+        <Route path='/user' element={<User/>}>User</Route>
+        <Route path='/movie' element={<Moviee/>}>Movie</Route>
+        <Route path='/login' element={<Login/>}>Movie</Route>
+        <Route path='/profile/:emailid' element={<Profile/>}>Profile</Route>
+        <Route path='/single_movie/:mid' element={<SingleMovie/>}>Single Movie</Route>
+        
+      </Routes>
     </div>
   );
 }

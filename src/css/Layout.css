@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+nav{
+    background-color:  lightblue; 
+}
+li{
+    color: white;
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    height: 100vh;
+    
+}
+.navbar li{
+    padding: 10px;
+    margin: 0 10px;
+   
+}
+.navbar Link{
+    text-decoration: none;
+}
+.btn-bar{
+    padding: 8px 20px;
+    /* background-color: black; */
+    color: whitesmoke;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
