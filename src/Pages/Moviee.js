@@ -9,7 +9,7 @@ const Moviee = () => {
   
   const getMovies=async()=>{
     try {
-      const response=await fetch(`/get_all_movie`)
+      const response=await fetch(`https://show-flix.onrender.com/get_all_movie`)
       const updated=await response.json();
       if(updated)
       {
@@ -31,7 +31,7 @@ const Moviee = () => {
 
   const deleteMovie=async(id)=>{
     try {
-        const response=await fetch(`/delete_movie`,{
+        const response=await fetch(`https://show-flix.onrender.com/delete_movie`,{
           method:'delete',
           headers:{          
             'Content-type': 'application/json'
@@ -70,7 +70,7 @@ const Moviee = () => {
       {result?result.map((e,index)=>{
         return(
           <tr key={e._id}>
-              <td> <p className='data'>{e.m_name}</p></td>
+              <td> <p className='data'>{e.m_name?e.m_name:"no Name"}</p></td>
               <td>  <p className='data'>{e.m_type}</p></td>
               <td>  <p className='data'>{e.m_link}</p></td>
               <td>  <p className='data'>{e.m_rating}</p></td>

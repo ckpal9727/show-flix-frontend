@@ -12,7 +12,7 @@ const SingleMovie = () => {
     const [m_releaseDate, setMReleaseDate] = useState();
     console.log(param)
     const getSingleMovie = async () => {
-        const movieProfile = await fetch(`/single_movie/${param.mid}`)
+        const movieProfile = await fetch(`https://show-flix.onrender.com/single_movie/${param.mid}`)
         const movieData = await movieProfile.json();
 
         if (movieData) {
@@ -44,7 +44,7 @@ const SingleMovie = () => {
 
         try {
             console.log("I a m in")
-            const response = await fetch(`/update_movie/${param.mid}`, {
+            const response = await fetch(`https://show-flix.onrender.com/update_movie/${param.mid}`, {
                 method: 'post',
                 headers: {
 
@@ -75,14 +75,14 @@ const SingleMovie = () => {
     return (
         <div>
 
-            <input type='text' value={m_name} onChange={(e) => { movieName(e) }} />
+            <input type='text' value={m_name?m_name:"no Name"} onChange={(e) => { movieName(e) }} />
 
 
-            <input type='text' value={m_type} onChange={(e) => { movieType(e) }} />
+            <input type='text' value={m_type?m_type:"No type"} onChange={(e) => { movieType(e) }} />
 
-            <input type='text' value={m_link} onChange={(e) => { movieLink(e) }} />
+            <input type='text' value={m_link?m_link:"No link"} onChange={(e) => { movieLink(e) }} />
 
-            <input type='text' value={m_releaseDate} onChange={(e) => { movieReleaseDate(e) }} />
+            <input type='text' value={m_releaseDate?m_releaseDate:"No Release Date"} onChange={(e) => { movieReleaseDate(e) }} />
 
             <input type='button' value='Update' onClick={(e) => { updateMovie() }} />
         </div>

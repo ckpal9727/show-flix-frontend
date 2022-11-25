@@ -9,10 +9,19 @@ const User = () => {
   const navigate=useNavigate();
   const fetchData = async () => {
     try {
-      const response = await fetch('/get_all_user');
+      const response = await fetch('https://show-flix.onrender.com/get_all_user');
       const data = await response.json();
+      
+     if(data)
+     {
+      if(data==='You are not a use'){
+        setResult([]);
+      }
       console.log(data);
-      setResult(data);
+     }else{
+      setResult([]);
+      console.log(data);
+     }
     } catch (error) {
 
     }
@@ -28,7 +37,7 @@ const User = () => {
 
   const deleteUser=async(e)=>{
     try {
-      const response=await fetch(`/delete_user/${e}`,{
+      const response=await fetch(`https://show-flix.onrender.com/delete_user/${e}`,{
         method:'delete',
         headers:{          
           'Content-type': 'application/json'

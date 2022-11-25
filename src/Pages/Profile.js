@@ -18,7 +18,7 @@ export const Profile = () => {
   const [mobile, setMobile] = useState("1234567890");
   
   const getUserProfile=async()=> {
-    const userProfile = await fetch(`/profile/${param.emailid}`)
+    const userProfile = await fetch(`https://show-flix.onrender.com/profile/${param.emailid}`)
     const userData = await userProfile.json();
     
     if (userData.message === "okk") {
@@ -52,7 +52,7 @@ export const Profile = () => {
   //update profile
   const  updateProfile=async()=>{
     try {
-      const response=await fetch(`/profile_update`,{
+      const response=await fetch(`https://show-flix.onrender.com/profile_update`,{
         method:'post',
         headers:{
           

@@ -21,7 +21,7 @@ export const Login = () => {
     onSubmit: async (values, action) => {
       const { email, password } = values
       console.log("onsubmit");
-      const response = await fetch('/login', {
+      const response = await fetch('https://show-flix.onrender.com/login', {
         method: 'post',
         headers: {
           'Content-type': 'application/json'
