@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path='/user' element={<User/>}>User</Route>
         <Route path='/movie' element={<Moviee/>}>Movie</Route>
-        <Route path='/login' element={<Login/>}>Movie</Route>
+        <Route path='/' element={<Login/>}>Movie</Route>
         <Route path='/profile/:emailid' element={<Profile/>}>Profile</Route>
         <Route path='/single_movie/:mid' element={<SingleMovie/>}>Single Movie</Route>
         
